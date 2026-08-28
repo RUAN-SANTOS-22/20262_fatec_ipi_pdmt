@@ -1,6 +1,6 @@
 import Pedido from "./Pedido"
 import Cartao from "./Cartao"
-import Feedback from "./FeedBack"
+import Feedback from "./Feedback"
 
 const pedidos = [
   {
