@@ -1,13 +1,14 @@
 import React from 'react'
 class App extends React.Component {
   constructor(props){
-    super(props)
+    super(props) //definir variaveis de estado
     this.state = {
       latitude: null,
       longitude: null,
       estacao: null,
       data: null,
-      icone: null
+      icone: null,
+      mensagemDeErro: null
     }
   }
   render(){
@@ -31,7 +32,7 @@ class App extends React.Component {
                       this.state.latitude ?
                         `Coordenadas: ${this.state.latitude},${this.state.longitude}. Data: ${this.state.data}.`
                       :
-                      `Clique no botão para saber a sua estação climática`
+                      this.state.mensagemDeErro ? `${this.state.mensagemDeErro}` : `Clique no botão para saber a sua estação climática`
                     }
                   </p>
                 </div>
@@ -92,6 +93,9 @@ class App extends React.Component {
       }, 
       (erro) => {
         console.log(`Erro: ${erro}`)
+        this.setState({
+          mensagemDeErro: 'Tente novamente mais tarde'
+        })
       }
     )
   }
