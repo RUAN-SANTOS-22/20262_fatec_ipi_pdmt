@@ -1,14 +1,14 @@
 //props src, alt
 //desestruturando a props
-const Imagem = ({ src, alt }) => {
+const Imagem = ({ src, alt, imgStyle}) => {
     // const src = props.src
     // const alt = props.alt
     // const{ src, alt } = props
 
-  return (
-    <div>
-        <img src={src} alt={alt} />
-    </div>
+  return (  
+      <div className={`${imgStyle} flex justify-content-center`}>
+          <img src={src} alt={alt} />
+      </div>
   )
 }
 
