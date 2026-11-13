@@ -30,7 +30,8 @@ export default class App extends React.Component {
       }
     })
     .then((result) => {
-      this.setState({photos: result.data.photos})
+      console.log(result)
+      this.setState({photos: result.data})
     })
   }
 
